@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahorcado | Karina Mercado</title> 
+  <link rel="shortcut icon" href="img/logo_alura.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="logo">
+      <a href="index.html"><img src="img/logo_alura.png" alt="Logo Alura"></a>
+    </div>
+    <div class="titulo">
+      <h1 id="texto-titulo">Ingrese una letra...</h1>
+    </div>
+    <section class="contenedor-principal-juego">
+      <div class="contenedor-img">
+        <img src="img/ahorcado-0.png" alt="imagen ahorcado" class="img-ahorcado" id="imagen-ahorcado">
+      </div>
+      <div class="contenedor-palabra">
+        <p class="letra letra-0"></p>
+        <p class="letra letra-1"></p>
+        <p class="letra letra-2"></p>
+        <p class="letra letra-3"></p>
+        <p class="letra letra-4"></p>
+        <p class="letra letra-5"></p>
+        <p class="letra letra-6"></p>
+        <p class="letra letra-7"></p>
+      </div>
+      <div class="contenedor-letras-erradas">
+        <span class="letras-erradas"></span>
+      </div>
+    </section>
+    <div class="contenedor-botones-juego">
+      <button class="boton-juego nuevo-juego" role="link" onclick="window.location='juego.html'">Nuevo Juego</button>
+      <button class="boton-juego desistir" role="link" onclick="window.location='index.html'">Desistir</button>
+    </div>
+    <div class="overlay">
+      <div class="cuadro-final-juego">
+        <a href="#" id="btn-cerrar-cuadro" class="btn-cerrar-cuadro"><i class="fas fa-times"></i></a>
+        <h2>Fin del Juego</h2>
+        <div class="contenedor-btn-final">
+          <button class="boton-juego nuevo-juego" role="link" onclick="window.location='juego.html'">Nuevo Juego</button>
+          <button class="boton-juego desistir" role="link" onclick="window.location='index.html'">Salir</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer-juego">
+    <div class="redes">
+      <a href="https://www.github.com/karinabmercado/" target="_blank" title="GitHub"><img class="img_redes" src="img/github.svg" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/karinabmercado/" target="_blank" title="LinkedIn"><img class="img_redes" src="img/linkedin.svg" alt="LinkedIn"></a>
+    </div>
+    <p class="copyright">&copy Karina Mercado - 2024</p>
+  </footer>
+  <script src="js/game.js"></script>
+</body>
+</html>

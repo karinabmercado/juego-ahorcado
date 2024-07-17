@@ -1,0 +1,658 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 18px;
+}
+
+body{
+  background-color: #E5E5E5;
+  font-family: 'Andika New Basic', sans-serif;
+  position: relative;
+}
+
+
+.logo{
+  display: inline-block;
+  position: fixed; 
+  top: 1rem;
+  left: 1.3rem;
+}
+
+.titulo{
+  width: 100%;
+}
+
+.titulo h1{
+  color: #0A3871;
+  text-align: center;
+  font-size: 2.3rem;
+  transition: all 600ms ease-in-out;
+  content: 'hola mundo';
+}
+
+.titulo .ganaste{
+  color: green;
+  transform: scale(1.03);
+}
+
+.titulo .perdiste{
+  color: red;
+  transform: scale(1.03);
+}
+
+.contenedor-botones-index{
+  width: 85%;
+  height: 60vh;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+
+.boton-index{
+  font-family: 'Andika New Basic', sans-serif;
+  font-size: 1rem;
+  width: 320px;
+  padding: 25px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.boton-index.iniciar{
+  background-color: #0A3871;
+  border: 1px solid #0A3871;
+  color: white;
+  transition: all 300ms ease-in-out;
+}
+
+.boton-index.iniciar:hover{
+  transform: scale(1.01);
+  background-color: #0f4d99;
+}
+
+.boton-index.agregar{
+  width: 260px;
+  padding: 20px;
+  background-color: #E5E5E5;
+  border: 2px solid #0A3871;
+  color: #0A3871;
+  transition: all 400ms ease-in-out;
+}
+
+.boton-index.agregar:hover{
+  transform: scale(1.01);
+  background-color: #f1f1f1;
+}
+
+footer{
+  /* height: 15%; */
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+footer .copyright{
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer .redes{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer .img_redes{
+  width: 52px;
+  transition: all 400ms ease-in-out;
+}
+
+footer .img_redes:hover{
+  transform: scale(1.1);
+}
+
+/*Area de ingreso nueva palabra*/
+
+.contenedor-input-panel{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 45vh;
+  margin: 5% auto;
+}
+
+.input-nueva-palabra{
+  font-size: 2rem;
+  font-family: 'Andika New Basic', sans-serif;
+  width: 65%;
+  padding: 4%;
+  color: #0A3871;
+  background: #e5e5e5;
+  border: none;
+  outline: none;
+}
+
+.input-nueva-palabra::placeholder{
+  color: #0A3871;
+  opacity: 0.9;
+}
+
+/* Contenedor del popup */
+.contenedor-popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* pop-up actual */
+.contenedor-popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #0A3871;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 1%;
+  left: 10%;
+  margin-left: -40vw;
+  
+}
+
+/* Muestra del Pop-up*/
+.contenedor-popup .popuptext::after {
+  content: "";
+  position: absolute;
+  transform: rotate(180deg);
+  top: -12%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #0A3871 transparent transparent transparent;
+}
+
+/* Cambio para mostrar/ocultar el contenedor del pop-up */
+.contenedor-popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Animación del pop-up */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.contenedor-botones-input{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.advertencia{
+  padding-left: 2%;
+  font-size: 0.9rem;
+}
+
+.advertencia img{
+  width: 0.9rem;
+}
+
+.botones-input-palabra{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8%;
+}
+
+.boton-input{
+  font-family: 'Andika New Basic', sans-serif;
+  font-size: 1rem;
+  width: 46%;
+  padding: 5px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.boton-input.guardar{
+  background-color: #0A3871;
+  border: 1px solid #0A3871;
+  color: white;
+  transition: all 400ms ease-in-out;
+}
+
+.boton-input.guardar:hover{
+  transform: scale(1.01);
+  background-color: #0f4d99;
+}
+
+.boton-input.cancelar{
+  padding: 20px;
+  background-color: #E5E5E5;
+  border: 2px solid #0A3871;
+  color: #0A3871;
+  transition: all 400ms ease-in-out;
+}
+
+.boton-input.cancelar:hover{
+  transform: scale(1.01);
+  background-color: #f1f1f1;
+}
+
+
+/*Area Juego*/
+
+.contenedor-principal-juego{
+  width: 50%;
+  display: block;
+  margin: 3% auto;
+}
+
+.contenedor-img{
+  display: flex;
+  justify-content: center;  
+}
+
+.img-ahorcado{
+  width: 40%;
+}
+
+.contenedor-palabra{
+  margin: 5px 0;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items:stretch;
+}
+
+.letra{
+  color: #0A3871;
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 800;
+  width: 10.5%;
+  height: 70px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #0A3871;
+}
+
+.contenedor-letras-erradas{
+
+  text-align: center;
+  display: block;
+  padding-top: 5px;
+  margin: 0 auto;
+}
+
+.letras-erradas{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3e444b;
+}
+
+.contenedor-botones-juego{
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 8%;
+}
+
+.boton-juego{
+  font-family: 'Andika New Basic', sans-serif;
+  font-size: 1rem;
+  width: 46%;
+  padding: 10px 5px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.boton-juego.nuevo-juego{
+  background-color: #0A3871;
+  border: 1px solid #0A3871;
+  color: white;
+  transition: all 400ms ease-in-out;
+}
+
+.boton-juego.nuevo-juego:hover{
+  transform: scale(1.01);
+  background-color: #0f4d99;
+}
+
+.boton-juego.desistir{
+  background-color: #E5E5E5;
+  border: 2px solid #0A3871;
+  color: #0A3871;
+  transition: all 400ms ease-in-out;
+}
+
+.boton-juego.desistir:hover{
+  transform: scale(1.01);
+  background-color: #f1f1f1;
+}
+
+.footer-juego{
+  position: fixed;
+  bottom: 2%;
+  right: 3%;
+}
+
+/*Mensaje final del juego*/
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.overlay.active{
+  visibility: visible;
+}
+
+
+.cuadro-final-juego{
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .8);
+  border-radius: 10px;
+  padding: 3% 2%;
+  text-align: center;
+  width: 40vw;
+  transition: all .8s ease;
+  transform: scale(0.7);
+  opacity: 0;
+}
+
+.cuadro-final-juego .btn-cerrar-cuadro{
+  font-size: 1rem;
+  line-height: 1rem;
+  display: block;
+  text-align: right;
+  color: #BBBBBB;
+  transition: all 300ms ease;
+}
+
+.cuadro-final-juego #btn-cerrar-cuadro:hover{
+  color: #0A3871;
+}
+
+.cuadro-final-juego h2{
+  color: #0A3871;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+
+.cuadro-final-juego .contenedor-btn-final{
+  opacity: 0;
+}
+
+.cuadro-final-juego .contenedor-btn-final button{
+  width: 100%;
+  margin-bottom: 5px;
+  height: 52px;
+  line-height: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/*Animaciones Mensaje final*/
+@keyframes entradaTitulo{
+  from{
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaBtn{
+  from{
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cuadro-final-juego.active{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cuadro-final-juego.active h2{
+  animation: entradaTitulo 1s .3s ease forwards;
+}
+
+.cuadro-final-juego.active .contenedor-btn-final{
+  animation: entradaBtn 1s .3s ease forwards;
+}
+
+
+/*Media Querys*/
+
+@media only screen and (max-width:440px){
+  html{
+    font-size: 14px;
+  }
+
+  .logo{
+    display: inline-block;
+    position: relative; 
+    top: 1rem;
+    left: 1.3rem;
+  }
+
+  .boton-index{
+    width: 100%;
+    padding: 16px;
+  }
+  
+  .boton-index.agregar{
+    width: 80%;
+    padding: 12px;
+  }
+
+  .contenedor-botones-input{
+    min-height: 25%;
+    width: 100%;    
+  }
+
+  .botones-input-palabra{
+    margin-top: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .contenedor-popup .popuptext {
+    bottom: 5%;
+    left: 10%;
+    margin-left: -50vw;
+  }
+
+  .boton-input{
+    width: 100%;
+    height: calc(50% - 29px);
+    padding: 19px 0;
+  }
+
+  .boton-input.cancelar{
+    padding: 20px 0;
+  }
+
+  .contenedor-principal-juego{
+    min-width: 95%;
+  }
+
+  .contenedor-img{
+    margin: 10% auto; 
+  }
+
+  .img-ahorcado{
+    min-width: 75%;
+  }
+
+  .contenedor-botones-juego{
+    width: 95%;
+    margin-top: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .boton-juego{
+    width: 100%;
+    height: calc(50% - 29px);
+    padding: 19px 0;
+  }
+
+  .boton-juego.desistir{
+    padding: 20px 0;
+  }
+
+  
+}
+
+@media only screen and (max-width: 821px){
+  .input-nueva-palabra{
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .contenedor-botones-input{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contenedor-principal-juego{
+    width: 85%;
+  }
+
+  .img-ahorcado{
+    width: 70%;
+  }
+
+  .contenedor-botones-juego{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .boton-juego{
+    padding: 25px 0;
+  }
+
+  .footer-juego{
+    position: relative;
+    bottom: 1px;
+  }
+
+  .cuadro-final-juego{
+    min-width: 70vw;
+  }
+
+}
+
+@media (min-height: 1000px) and (max-width: 920px){
+  .input-nueva-palabra{
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .contenedor-botones-input{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contenedor-principal-juego{
+    margin: 10% auto;
+    width: 85%;
+  }
+
+  .contenedor-img{
+    margin: 5% auto;  
+  }
+
+  .img-ahorcado{
+    width: 70%;
+  }
+
+  .contenedor-botones-juego{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .boton-juego{
+
+    padding: 25px 0;
+  }
+
+  .footer-juego{
+    position: relative;
+    bottom: 0;
+  }
+
+  .cuadro-final-juego{
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 912px){
+  .input-nueva-palabra{
+    font-size: 1.8rem;
+    width: 100%;
+  }
+  .contenedor-botones-input{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .boton-juego{
+    padding: 25px 0;
+  }
+
+  .cuadro-final-juego{
+    width: 50vw;
+  }
+
+}
+
+@media (min-width: 1100px){
+  html{
+    font-size: 19px;
+  }
+
+  .contenedor-input-panel{
+    margin: 2.9% auto;
+  }
+}
